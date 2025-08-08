@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.kapt)
+    id("com.google.dagger.hilt.android") version "2.41"
+
 }
 
 android {
@@ -56,4 +59,31 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+    // Timber
+    implementation("com.jakewharton.timber:timber:4.7.1")
+
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+
+    // Lifecycle ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+
+    // Coil
+    implementation("io.coil-kt:coil:1.1.1")
+    implementation("com.google.accompanist:accompanist-coil:0.7.0")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.33-beta")
+    kapt("com.google.dagger:hilt-android-compiler:2.33-beta")
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    kapt("androidx.hilt:hilt-compiler:1.0.0-beta01")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha01")
 }
